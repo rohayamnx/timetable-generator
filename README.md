@@ -22,7 +22,7 @@ A web application designed to help teachers and lecturers generate timetables on
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/rohayamnx/timetable-generator.git
    ```
 
 2. Navigate to the project directory:
