@@ -1,21 +1,23 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-const TimetableContext = createContext();
+type TimetableContextType = {
+  timetableEntries: any[];
+  setTimetableEntries: React.Dispatch<React.SetStateAction<any[]>>;
+};
 
-export const TimetableProvider = ({ children }) => {
-    const [timetableEntries, setTimetableEntries] = useState([]);
+const TimetableContext = createContext<TimetableContextType | undefined>(undefined);
 
-    const addEntry = (entry) => {
-        setTimetableEntries((prevEntries) => [...prevEntries, entry]);
-    };
-
-    return (
-        <TimetableContext.Provider value={{ timetableEntries, addEntry }}>
-            {children}
-        </TimetableContext.Provider>
-    );
+export const TimetableProvider = ({ children }: { children: ReactNode }) => {
+  const [timetableEntries, setTimetableEntries] = useState<any[]>([]);
+  return (
+    <TimetableContext.Provider value={{ timetableEntries, setTimetableEntries }}>
+      {children}
+    </TimetableContext.Provider>
+  );
 };
 
 export const useTimetable = () => {
-    return useContext(TimetableContext);
+  const context = useContext(TimetableContext);
+  if (!context) throw new Error('useTimetable must be used within a TimetableProvider');
+  return context;
 };
