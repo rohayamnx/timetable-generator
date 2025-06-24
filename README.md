@@ -42,10 +42,15 @@ A web application designed to help teachers and lecturers generate timetables on
 
 5. Open your browser and go to `http://localhost:3000` to view the application.
 
+## 🚀 Live Demo
+👉 **[View Live on Vercel](https://timetable-generator-hv8etwkom-rohayamnxs-projects.vercel.app//)**  
+
+[![Deployed with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.# timetable-generator
+This project is licensed under the MIT License. See the LICENSE file for more details.
